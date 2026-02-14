@@ -1,0 +1,32 @@
+@import './styles/theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: var(--font-family-body);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+  }
+}
+
+@layer components {
+  .card-neumorphic {
+    @apply rounded-lg border border-[var(--color-card-border)] bg-[var(--color-card-bg)] text-[var(--color-foreground)] shadow-md p-4;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .hover-lift:hover {
+    @apply transform -translate-y-1 shadow-lg;
+  }
+}
